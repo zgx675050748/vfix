@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="love.xihongshi.dao.WorkerMapper">
+  <resultMap id="BaseResultMap" type="love.xihongshi.bean.Worker">
+    <id column="wid" jdbcType="BIGINT" property="wid" />
+    <result column="skill" jdbcType="VARCHAR" property="skill" />
+    <result column="wname" jdbcType="VARCHAR" property="wname" />
+    <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+  </resultMap>
+
+  <resultMap id="BaseResultMapWithUser" type="love.xihongshi.bean.Worker">
+    <id column="wid" jdbcType="BIGINT" property="wid" />
+    <result column="skill" jdbcType="VARCHAR" property="skill" />
+    <result column="wname" jdbcType="VARCHAR" property="wname" />
+    <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
+    <association property="user"
+                 javaType="love.xihongshi.bean.User">
+      <id column="uid" jdbcType="BIGINT" property="uid" />
+      <result column="uwid" jdbcType="VARCHAR" property="wid" />
+      <result column="nickName" jdbcType="VARCHAR" property="nickName" />
+      <result column="avatarUrl" jdbcType="VARCHAR" property="avatarUrl" />
+      <result column="gender" jdbcType="INTEGER" property="gender" />
+      <result column="province" jdbcType="VARCHAR" property="province" />
+      <result column="city" jdbcType="VARCHAR" property="city" />
+      <result column="userFlag" jdbcType="INTEGER" property="userFlag"/>
+      <result column="workerFlag" jdbcType="INTEGER" property="workerFlag"/>
+      <result column="merchantFlag" jdbcType="INTEGER" property="merchantFlag"/>
+    </association>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    wid, skill, wname, phonenum, uid
+  </sql>
+  <sql id="Base_Column_List_User">
+    w.wid, w.skill, w.wname, w.phonenum, u.uid, u.wid uwid, u.nickName,
+    u.avatarUrl,
+    u.gender, u.province, u.city
+  </sql>
+  <select id="selectByExample" parameterType="love.xihongshi.bean.WorkerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from worker
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from worker
+    where wid = #{wid,jdbcType=BIGINT}
+  </select>
+
+<!--  带user查询-->
+  <select id="selectByExampleWithUser"
+          parameterType="love.xihongshi.bean.WorkerExample" resultMap="BaseResultMapWithUser">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List_User" />
+    from worker w left join user u on w.uid=u.uid
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+
+  <select id="selectByPrimaryKeyWithUser" parameterType="java.lang.Long"
+          resultMap="BaseResultMapWithUser">
+    select
+    <include refid="Base_Column_List_User" />
+    from worker w left join user u on w.uid=u.uid
+    where wid = #{wid,jdbcType=BIGINT}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from worker
+    where wid = #{wid,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="love.xihongshi.bean.WorkerExample">
+    delete from worker
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="love.xihongshi.bean.Worker">
+    insert into worker (wid, skill, wname, 
+      phonenum, uid, l2, l3
+      )
+    values (#{wid,jdbcType=BIGINT}, #{skill,jdbcType=VARCHAR}, #{wname,jdbcType=VARCHAR}, 
+      #{phonenum,jdbcType=INTEGER}, #{uid,jdbcType=BIGINT}, #{l2,jdbcType=VARCHAR}, #{l3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="love.xihongshi.bean.Worker">
+    insert into worker
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wid != null">
+        wid,
+      </if>
+      <if test="skill != null">
+        skill,
+      </if>
+      <if test="wname != null">
+        wname,
+      </if>
+      <if test="phonenum != null">
+        phonenum,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="l2 != null">
+        l2,
+      </if>
+      <if test="l3 != null">
+        l3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wid != null">
+        #{wid,jdbcType=BIGINT},
+      </if>
+      <if test="skill != null">
+        #{skill,jdbcType=VARCHAR},
+      </if>
+      <if test="wname != null">
+        #{wname,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenum != null">
+        #{phonenum,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="l2 != null">
+        #{l2,jdbcType=VARCHAR},
+      </if>
+      <if test="l3 != null">
+        #{l3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="love.xihongshi.bean.WorkerExample" resultType="java.lang.Long">
+    select count(*) from worker
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update worker
+    <set>
+      <if test="record.wid != null">
+        wid = #{record.wid,jdbcType=BIGINT},
+      </if>
+      <if test="record.skill != null">
+        skill = #{record.skill,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wname != null">
+        wname = #{record.wname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phonenum != null">
+        phonenum = #{record.phonenum,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=BIGINT},
+      </if>
+      <if test="record.l2 != null">
+        l2 = #{record.l2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.l3 != null">
+        l3 = #{record.l3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update worker
+    set wid = #{record.wid,jdbcType=BIGINT},
+      skill = #{record.skill,jdbcType=VARCHAR},
+      wname = #{record.wname,jdbcType=VARCHAR},
+      phonenum = #{record.phonenum,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=BIGINT},
+      l2 = #{record.l2,jdbcType=VARCHAR},
+      l3 = #{record.l3,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="love.xihongshi.bean.Worker">
+    update worker
+    <set>
+      <if test="skill != null">
+        skill = #{skill,jdbcType=VARCHAR},
+      </if>
+      <if test="wname != null">
+        wname = #{wname,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenum != null">
+        phonenum = #{phonenum,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="l2 != null">
+        l2 = #{l2,jdbcType=VARCHAR},
+      </if>
+      <if test="l3 != null">
+        l3 = #{l3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wid = #{wid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="love.xihongshi.bean.Worker">
+    update worker
+    set skill = #{skill,jdbcType=VARCHAR},
+      wname = #{wname,jdbcType=VARCHAR},
+      phonenum = #{phonenum,jdbcType=INTEGER},
+      uid = #{uid,jdbcType=BIGINT},
+      l2 = #{l2,jdbcType=VARCHAR},
+      l3 = #{l3,jdbcType=VARCHAR}
+    where wid = #{wid,jdbcType=BIGINT}
+  </update>
+</mapper>
