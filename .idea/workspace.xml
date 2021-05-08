@@ -11,62 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0bc1637c-6e16-4a30-beaf-8e7f009e0154" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/bean/Commodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/bean/Commodity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/bean/DemandExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/bean/DemandExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/bean/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/bean/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/CommodityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/CommodityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/DemandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/DemandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/MerchantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/WorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/controller/WorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/CommodityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/CommodityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/DemandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/DemandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/MerchantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/WorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/love/xihongshi/service/WorkerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommodityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommodityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WorkerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/WorkerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/Commodity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/Commodity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/DemandExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/DemandExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/DemandExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/DemandExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/DemandExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/DemandExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/bean/Worker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/CommodityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/CommodityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/DemandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/DemandController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/MerchantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/MerchantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/WorkerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/controller/WorkerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/service/CommodityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/service/CommodityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/service/DemandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/service/DemandService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/service/MerchantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/service/MerchantService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/love/xihongshi/service/WorkerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/love/xihongshi/service/WorkerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommodityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CommodityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/WorkerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/WorkerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/Commodity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/Commodity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/DemandExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/DemandExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/DemandExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/DemandExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/DemandExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/DemandExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/bean/Worker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/CommodityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/CommodityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/DemandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/DemandController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/MerchantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/MerchantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/WorkerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/controller/WorkerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/CommodityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/CommodityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/DemandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/DemandService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/MerchantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/MerchantService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/WorkerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/love/xihongshi/service/WorkerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/mapper/CommodityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/mapper/CommodityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/mapper/WorkerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/classes/mapper/WorkerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/vfix-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +53,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MBGTest.test">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -118,6 +63,22 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MBGTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vfix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MBGTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,6 +172,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MBGTest.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -225,7 +191,7 @@
       <workItem from="1619776314074" duration="3117000" />
       <workItem from="1619834822648" duration="3755000" />
       <workItem from="1620267883345" duration="12420000" />
-      <workItem from="1620440112132" duration="12455000" />
+      <workItem from="1620440112132" duration="15005000" />
     </task>
     <servers />
   </component>

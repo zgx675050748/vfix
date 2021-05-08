@@ -41,11 +41,11 @@
         </javaClientGenerator>
 
 <!--        table指定每个表的生成策略-->
-        <table tableName="user" domainObjectName="User"/>
-        <table tableName="merchant" domainObjectName="Merchant"/>
-        <table tableName="worker" domainObjectName="Worker"/>
-        <table tableName="demand" domainObjectName="Demand"/>
-        <table tableName="commodity" domainObjectName="Commodity"/>
+        <table tableName="commodityComment" domainObjectName="CommodityComment"/>
+        <table tableName="commodityOrderForm" 
+               domainObjectName="CommodityOrderForm"/>
+        <table tableName="demandOrderForm" domainObjectName="DemandOrderForm"/>
+        <table tableName="workerComment" domainObjectName="WorkerComment"/>
 
     </context>
 </generatorConfiguration>
