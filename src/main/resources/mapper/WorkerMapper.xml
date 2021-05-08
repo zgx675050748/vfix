@@ -7,6 +7,7 @@
     <result column="wname" jdbcType="VARCHAR" property="wname" />
     <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
     <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
   </resultMap>
 
   <resultMap id="BaseResultMapWithUser" type="love.xihongshi.bean.Worker">
@@ -14,6 +15,7 @@
     <result column="skill" jdbcType="VARCHAR" property="skill" />
     <result column="wname" jdbcType="VARCHAR" property="wname" />
     <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
     <association property="user"
                  javaType="love.xihongshi.bean.User">
       <id column="uid" jdbcType="BIGINT" property="uid" />
@@ -87,10 +89,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    wid, skill, wname, phonenum, uid
+    wid, skill, wname, phonenum, uid, address
   </sql>
   <sql id="Base_Column_List_User">
-    w.wid, w.skill, w.wname, w.phonenum, u.uid, u.wid uwid, u.nickName,
+    w.wid, w.skill, w.wname, w.phonenum, w.address, u.uid, u.wid uwid,
+    u.nickName,
     u.avatarUrl,
     u.gender, u.province, u.city
   </sql>
@@ -152,10 +155,10 @@
   </delete>
   <insert id="insert" parameterType="love.xihongshi.bean.Worker">
     insert into worker (wid, skill, wname, 
-      phonenum, uid, l2, l3
+      phonenum, uid, address, l3
       )
     values (#{wid,jdbcType=BIGINT}, #{skill,jdbcType=VARCHAR}, #{wname,jdbcType=VARCHAR}, 
-      #{phonenum,jdbcType=INTEGER}, #{uid,jdbcType=BIGINT}, #{l2,jdbcType=VARCHAR}, #{l3,jdbcType=VARCHAR}
+      #{phonenum,jdbcType=INTEGER}, #{uid,jdbcType=BIGINT}, #{address,jdbcType=VARCHAR}, #{l3,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="love.xihongshi.bean.Worker">
@@ -176,8 +179,8 @@
       <if test="uid != null">
         uid,
       </if>
-      <if test="l2 != null">
-        l2,
+      <if test="address != null">
+        address,
       </if>
       <if test="l3 != null">
         l3,
@@ -199,8 +202,8 @@
       <if test="uid != null">
         #{uid,jdbcType=BIGINT},
       </if>
-      <if test="l2 != null">
-        #{l2,jdbcType=VARCHAR},
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
       </if>
       <if test="l3 != null">
         #{l3,jdbcType=VARCHAR},
@@ -231,8 +234,8 @@
       <if test="record.uid != null">
         uid = #{record.uid,jdbcType=BIGINT},
       </if>
-      <if test="record.l2 != null">
-        l2 = #{record.l2,jdbcType=VARCHAR},
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
       </if>
       <if test="record.l3 != null">
         l3 = #{record.l3,jdbcType=VARCHAR},
@@ -249,7 +252,7 @@
       wname = #{record.wname,jdbcType=VARCHAR},
       phonenum = #{record.phonenum,jdbcType=INTEGER},
       uid = #{record.uid,jdbcType=BIGINT},
-      l2 = #{record.l2,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
       l3 = #{record.l3,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -270,8 +273,8 @@
       <if test="uid != null">
         uid = #{uid,jdbcType=BIGINT},
       </if>
-      <if test="l2 != null">
-        l2 = #{l2,jdbcType=VARCHAR},
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
       </if>
       <if test="l3 != null">
         l3 = #{l3,jdbcType=VARCHAR},
@@ -285,7 +288,7 @@
       wname = #{wname,jdbcType=VARCHAR},
       phonenum = #{phonenum,jdbcType=INTEGER},
       uid = #{uid,jdbcType=BIGINT},
-      l2 = #{l2,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
       l3 = #{l3,jdbcType=VARCHAR}
     where wid = #{wid,jdbcType=BIGINT}
   </update>

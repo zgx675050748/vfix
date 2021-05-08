@@ -47,4 +47,10 @@ public class UserService {
         userExample.createCriteria().andWidEqualTo(user.getWid());
         return userMapper.updateByExampleSelective(user,userExample);
     }
+
+    public void updateUserByWid(String wid,User user) {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andWidEqualTo(wid);
+        userMapper.updateByExampleSelective(user,userExample);
+    }
 }

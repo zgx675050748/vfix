@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -24,13 +25,14 @@ public class Commodity {
 
     private String status;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date releasedate;
 
     private Long salesamount;
 
     private Long mid;
 
-    private String l1;
+    private String iconUrl;
 
     private String l2;
 

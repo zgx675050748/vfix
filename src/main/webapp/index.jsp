@@ -11,10 +11,5 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="http://localhost:8080/vfix/imgUpload"
-          enctype="multipart/form-data" method="post">
-        <input type="file" name="upload"/>
-        <input type="submit"/>
-    </form>
 </body>
 </html>

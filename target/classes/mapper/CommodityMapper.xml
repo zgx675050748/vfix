@@ -11,6 +11,7 @@
     <result column="releasedate" jdbcType="TIMESTAMP" property="releasedate" />
     <result column="salesamount" jdbcType="BIGINT" property="salesamount" />
     <result column="mid" jdbcType="BIGINT" property="mid" />
+    <result column="iconUrl" jdbcType="VARCHAR" property="iconUrl" />
   </resultMap>
 
   <resultMap id="BaseResultMapWithMerchant"
@@ -23,6 +24,7 @@
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="releasedate" jdbcType="TIMESTAMP" property="releasedate" />
     <result column="salesamount" jdbcType="BIGINT" property="salesamount" />
+    <result column="iconUrl" jdbcType="VARCHAR" property="iconUrl" />
     <association property="merchant"
                  javaType="love.xihongshi.bean.Merchant">
       <id column="mid" property="mid"/>
@@ -98,7 +100,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    cid, cname, price, type, amount, status, releasedate, salesamount, mid
+    cid, cname, price, type, amount, status, releasedate, salesamount, mid,
+    iconUrl
   </sql>
   <sql id="Blob_Column_List">
     cintroduce
@@ -106,7 +109,8 @@
 
   <sql id="Base_Column_List_Merchant">
     c.cid, c.cname, c.price, c.type, c.amount, c.status, c.releasedate,
-    c.salesamount, c.mid, m.mid, m.mname, m.status, m.address, m.principalname, m.idcard,
+    c.salesamount, c.iconUrl, m.mid, m.mname, m.status, m.address,
+    m.principalname, m.idcard,
     m.phonenum, m.uid
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="love.xihongshi.bean.CommodityExample" resultMap="ResultMapWithBLOBs">
@@ -187,12 +191,12 @@
     insert into commodity (cid, cname, price, 
       type, amount, status, 
       releasedate, salesamount, mid, 
-      l1, l2, l3, cintroduce
+      iconUrl, l2, l3, cintroduce
       )
     values (#{cid,jdbcType=BIGINT}, #{cname,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
       #{type,jdbcType=VARCHAR}, #{amount,jdbcType=BIGINT}, #{status,jdbcType=VARCHAR}, 
       #{releasedate,jdbcType=TIMESTAMP}, #{salesamount,jdbcType=BIGINT}, #{mid,jdbcType=BIGINT}, 
-      #{l1,jdbcType=VARCHAR}, #{l2,jdbcType=VARCHAR}, #{l3,jdbcType=VARCHAR}, #{cintroduce,jdbcType=LONGVARCHAR}
+      #{iconUrl,jdbcType=VARCHAR}, #{l2,jdbcType=VARCHAR}, #{l3,jdbcType=VARCHAR}, #{cintroduce,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="love.xihongshi.bean.Commodity">
@@ -225,8 +229,8 @@
       <if test="mid != null">
         mid,
       </if>
-      <if test="l1 != null">
-        l1,
+      <if test="iconUrl != null">
+        iconUrl,
       </if>
       <if test="l2 != null">
         l2,
@@ -266,8 +270,8 @@
       <if test="mid != null">
         #{mid,jdbcType=BIGINT},
       </if>
-      <if test="l1 != null">
-        #{l1,jdbcType=VARCHAR},
+      <if test="iconUrl != null">
+        #{iconUrl,jdbcType=VARCHAR},
       </if>
       <if test="l2 != null">
         #{l2,jdbcType=VARCHAR},
@@ -316,8 +320,8 @@
       <if test="record.mid != null">
         mid = #{record.mid,jdbcType=BIGINT},
       </if>
-      <if test="record.l1 != null">
-        l1 = #{record.l1,jdbcType=VARCHAR},
+      <if test="record.iconUrl != null">
+        iconUrl = #{record.iconUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.l2 != null">
         l2 = #{record.l2,jdbcType=VARCHAR},
@@ -344,7 +348,7 @@
       releasedate = #{record.releasedate,jdbcType=TIMESTAMP},
       salesamount = #{record.salesamount,jdbcType=BIGINT},
       mid = #{record.mid,jdbcType=BIGINT},
-      l1 = #{record.l1,jdbcType=VARCHAR},
+    iconUrl = #{record.iconUrljdbcType=VARCHAR},
       l2 = #{record.l2,jdbcType=VARCHAR},
       l3 = #{record.l3,jdbcType=VARCHAR},
       cintroduce = #{record.cintroduce,jdbcType=LONGVARCHAR}
@@ -363,7 +367,7 @@
       releasedate = #{record.releasedate,jdbcType=TIMESTAMP},
       salesamount = #{record.salesamount,jdbcType=BIGINT},
       mid = #{record.mid,jdbcType=BIGINT},
-      l1 = #{record.l1,jdbcType=VARCHAR},
+    iconUrl = #{record.iconUrl,jdbcType=VARCHAR},
       l2 = #{record.l2,jdbcType=VARCHAR},
       l3 = #{record.l3,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -397,8 +401,8 @@
       <if test="mid != null">
         mid = #{mid,jdbcType=BIGINT},
       </if>
-      <if test="l1 != null">
-        l1 = #{l1,jdbcType=VARCHAR},
+      <if test="iconUrl != null">
+        iconUrl = #{iconUrl,jdbcType=VARCHAR},
       </if>
       <if test="l2 != null">
         l2 = #{l2,jdbcType=VARCHAR},
@@ -422,7 +426,7 @@
       releasedate = #{releasedate,jdbcType=TIMESTAMP},
       salesamount = #{salesamount,jdbcType=BIGINT},
       mid = #{mid,jdbcType=BIGINT},
-      l1 = #{l1,jdbcType=VARCHAR},
+        iconUrl = #{iconUrl,jdbcType=VARCHAR},
       l2 = #{l2,jdbcType=VARCHAR},
       l3 = #{l3,jdbcType=VARCHAR},
       cintroduce = #{cintroduce,jdbcType=LONGVARCHAR}
@@ -438,7 +442,7 @@
       releasedate = #{releasedate,jdbcType=TIMESTAMP},
       salesamount = #{salesamount,jdbcType=BIGINT},
       mid = #{mid,jdbcType=BIGINT},
-      l1 = #{l1,jdbcType=VARCHAR},
+        iconUrl = #{iconUrl,jdbcType=VARCHAR},
       l2 = #{l2,jdbcType=VARCHAR},
       l3 = #{l3,jdbcType=VARCHAR}
     where cid = #{cid,jdbcType=BIGINT}

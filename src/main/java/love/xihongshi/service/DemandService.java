@@ -1,6 +1,7 @@
 package love.xihongshi.service;
 
 import love.xihongshi.bean.Demand;
+import love.xihongshi.bean.DemandExample;
 import love.xihongshi.dao.DemandMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,21 @@ public class DemandService {
 
     public Demand getDemandByDid(Long did) {
         return demandMapper.selectByPrimaryKeyWithUser(did);
+    }
+
+    public List<Demand> searchDemand(String key) {
+        DemandExample demandExample = new DemandExample();
+        DemandExample.Criteria criteria0 = demandExample.createCriteria();
+        criteria0.andAddressLike("%"+key+"%");
+
+        DemandExample.Criteria criteria1 = demandExample.createCriteria();
+        criteria1.andShortCutLike("%"+key+"%");
+        demandExample.or(criteria1);
+
+        DemandExample.Criteria criteria2 = demandExample.createCriteria();
+        criteria2.andContentLike("%"+key+"%");
+        demandExample.or(criteria2);
+
+        return demandMapper.selectByExampleWithUser(demandExample);
     }
 }

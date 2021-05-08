@@ -1,6 +1,9 @@
 package love.xihongshi.service;
 
+import love.xihongshi.bean.Commodity;
 import love.xihongshi.bean.Merchant;
+import love.xihongshi.bean.MerchantExample;
+import love.xihongshi.dao.CommodityMapper;
 import love.xihongshi.dao.MerchantMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +24,18 @@ public class MerchantService {
 
     public List<Merchant> getAllMerchant() {
         return merchantMapper.selectByExampleWithUser(null);
+    }
+
+
+
+    public void addMerchant(Merchant merchant) {
+        merchantMapper.insertSelective(merchant);
+    }
+
+    public List<Merchant> getMerchantByUid(Long uid) {
+        MerchantExample merchantExample = new MerchantExample();
+        MerchantExample.Criteria criteria = merchantExample.createCriteria();
+        criteria.andUidEqualTo(uid);
+        return merchantMapper.selectByExample(merchantExample);
     }
 }

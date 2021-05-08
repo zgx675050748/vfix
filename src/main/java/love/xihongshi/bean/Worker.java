@@ -20,7 +20,7 @@ public class Worker {
 
     private Long uid;
 
-    private String l2;
+    private String address;
 
     private String l3;
 

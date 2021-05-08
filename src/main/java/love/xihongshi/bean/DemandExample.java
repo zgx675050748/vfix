@@ -165,6 +165,8 @@ public class DemandExample {
             return (Criteria) this;
         }
 
+//        *********************************************************************
+
         public Criteria andReleasedateIsNull() {
             addCriterion("releasedate is null");
             return (Criteria) this;
@@ -225,6 +227,8 @@ public class DemandExample {
             return (Criteria) this;
         }
 
+//        *********************************************************************
+
         public Criteria andEnddateIsNull() {
             addCriterion("enddate is null");
             return (Criteria) this;
@@ -284,6 +288,8 @@ public class DemandExample {
             addCriterion("enddate not between", value1, value2, "enddate");
             return (Criteria) this;
         }
+
+//        *********************************************************************
 
         public Criteria andDstatusIsNull() {
             addCriterion("dstatus is null");
@@ -355,6 +361,8 @@ public class DemandExample {
             return (Criteria) this;
         }
 
+//        *********************************************************************
+
         public Criteria andUidIsNull() {
             addCriterion("uid is null");
             return (Criteria) this;
@@ -414,6 +422,8 @@ public class DemandExample {
             addCriterion("uid not between", value1, value2, "uid");
             return (Criteria) this;
         }
+
+//        *********************************************************************
 
         public Criteria andPhonenumIsNull() {
             addCriterion("phonenum is null");
@@ -475,76 +485,223 @@ public class DemandExample {
             return (Criteria) this;
         }
 
-        public Criteria andL1IsNull() {
-            addCriterion("l1 is null");
+//        *********************************************************************
+
+        public Criteria andShortCutIsNull() {
+            addCriterion("shortcut is null");
             return (Criteria) this;
         }
 
-        public Criteria andL1IsNotNull() {
-            addCriterion("l1 is not null");
+        public Criteria andShortCutIsNotNull() {
+            addCriterion("shortcut is not null");
             return (Criteria) this;
         }
 
-        public Criteria andL1EqualTo(String value) {
-            addCriterion("l1 =", value, "l1");
+        public Criteria andShortCutEqualTo(String value) {
+            addCriterion("shortcut =", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1NotEqualTo(String value) {
-            addCriterion("l1 <>", value, "l1");
+        public Criteria andShortCutNotEqualTo(String value) {
+            addCriterion("shortcut <>", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1GreaterThan(String value) {
-            addCriterion("l1 >", value, "l1");
+        public Criteria andShortCutGreaterThan(String value) {
+            addCriterion("shortcut >", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1GreaterThanOrEqualTo(String value) {
-            addCriterion("l1 >=", value, "l1");
+        public Criteria andShortCutGreaterThanOrEqualTo(String value) {
+            addCriterion("shortcut >=", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1LessThan(String value) {
-            addCriterion("l1 <", value, "l1");
+        public Criteria andShortCutLessThan(String value) {
+            addCriterion("shortcut <", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1LessThanOrEqualTo(String value) {
-            addCriterion("l1 <=", value, "l1");
+        public Criteria andShortCutLessThanOrEqualTo(String value) {
+            addCriterion("shortcut <=", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1Like(String value) {
-            addCriterion("l1 like", value, "l1");
+        public Criteria andShortCutLike(String value) {
+            addCriterion("shortcut like", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1NotLike(String value) {
-            addCriterion("l1 not like", value, "l1");
+        public Criteria andShortCutNotLike(String value) {
+            addCriterion("shortcut not like", value, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1In(List<String> values) {
-            addCriterion("l1 in", values, "l1");
+        public Criteria andShortCutIn(List<String> values) {
+            addCriterion("shortcut in", values, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1NotIn(List<String> values) {
-            addCriterion("l1 not in", values, "l1");
+        public Criteria andShortCutNotIn(List<String> values) {
+            addCriterion("shortcut not in", values, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1Between(String value1, String value2) {
-            addCriterion("l1 between", value1, value2, "l1");
+        public Criteria andShortCutBetween(String value1, String value2) {
+            addCriterion("shortcut between", value1, value2, "l1");
             return (Criteria) this;
         }
 
-        public Criteria andL1NotBetween(String value1, String value2) {
-            addCriterion("l1 not between", value1, value2, "l1");
+        public Criteria andShortCutNotBetween(String value1, String value2) {
+            addCriterion("shortcut not between", value1, value2, "l1");
+            return (Criteria) this;
+        }
+
+//        *********************************************************************
+
+        public Criteria andAddressIsNull() {
+            addCriterion("address is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressIsNotNull() {
+            addCriterion("address is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressEqualTo(String value) {
+            addCriterion("address =", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressNotEqualTo(String value) {
+            addCriterion("address <>", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressGreaterThan(String value) {
+            addCriterion("address >", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressGreaterThanOrEqualTo(String value) {
+            addCriterion("address >=", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressLessThan(String value) {
+            addCriterion("address <", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressLessThanOrEqualTo(String value) {
+            addCriterion("address <=", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressLike(String value) {
+            addCriterion("address like", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressNotLike(String value) {
+            addCriterion("address not like", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressIn(List<String> values) {
+            addCriterion("address in", values, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressNotIn(List<String> values) {
+            addCriterion("address not in", values, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressBetween(String value1, String value2) {
+            addCriterion("address between", value1, value2, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddressNotBetween(String value1, String value2) {
+            addCriterion("address not between", value1, value2, "l1");
+            return (Criteria) this;
+        }
+
+//        *********************************************************************
+
+        public Criteria andContentIsNull() {
+            addCriterion("content is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentIsNotNull() {
+            addCriterion("content is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentEqualTo(String value) {
+            addCriterion("content =", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentNotEqualTo(String value) {
+            addCriterion("content <>", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentGreaterThan(String value) {
+            addCriterion("content >", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentGreaterThanOrEqualTo(String value) {
+            addCriterion("content >=", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentLessThan(String value) {
+            addCriterion("content <", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentLessThanOrEqualTo(String value) {
+            addCriterion("content <=", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentLike(String value) {
+            addCriterion("content like", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentNotLike(String value) {
+            addCriterion("content not like", value, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentIn(List<String> values) {
+            addCriterion("content in", values, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentNotIn(List<String> values) {
+            addCriterion("content not in", values, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentBetween(String value1, String value2) {
+            addCriterion("content between", value1, value2, "l1");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentNotBetween(String value1, String value2) {
+            addCriterion("content not between", value1, value2, "l1");
             return (Criteria) this;
         }
     }
+
 
     public static class Criteria extends GeneratedCriteria {
 

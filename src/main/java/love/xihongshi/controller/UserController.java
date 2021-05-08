@@ -86,7 +86,9 @@ public class UserController {
             System.out.println("首次登录");
         }
         session.setAttribute("session_key",session_key);
-        return Msg.success().add("openid",openid).add("session_key",session_key);
+        List<User> userByWid = userService.getUserByWid(openid);
+        return Msg.success().add("openid",openid).add("session_key",
+                session_key).add("uid",userByWid.get(0).getUid());
     }
 
     @RequestMapping(value = "/user",method = RequestMethod.GET)

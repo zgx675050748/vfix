@@ -39,4 +39,23 @@ public class CommodityService {
 
         return commodityMapper.selectByExampleWithMerchant(commodityExample);
     }
+
+    public List<Commodity> getCommodityByUid(Long mid) {
+        CommodityExample commodityExample = new CommodityExample();
+        CommodityExample.Criteria criteria = commodityExample.createCriteria();
+        criteria.andMidEqualTo(mid);
+        return commodityMapper.selectByExample(commodityExample);
+    }
+
+    public Commodity getCommodityByCidWithFull(Long cid) {
+        return commodityMapper.selectByPrimaryKey(cid);
+    }
+
+    public void updateCommodityByCid(Commodity commodity) {
+        commodityMapper.updateByPrimaryKeySelective(commodity);
+    }
+
+    public void addCommodity(Commodity commodity) {
+        commodityMapper.insertSelective(commodity);
+    }
 }

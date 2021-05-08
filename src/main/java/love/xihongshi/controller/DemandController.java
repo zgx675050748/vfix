@@ -26,7 +26,14 @@ public class DemandController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("demandFullbyDid")
+    @RequestMapping("/searchDemand")
+    @ResponseBody
+    public Msg searchDemand(String key){
+        List<Demand> demandList = demandService.searchDemand(key);
+        return Msg.success().add("demand",demandList);
+    }
+
+    @RequestMapping("/demandFullbyDid")
     @ResponseBody
     public Msg getDemandFullByDid(Long did){
         Demand demand = demandService.getDemandByDid(did);
