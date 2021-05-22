@@ -8,7 +8,7 @@
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="principalname" jdbcType="VARCHAR" property="principalname" />
     <result column="idcard" jdbcType="VARCHAR" property="idcard" />
-    <result column="phonenum" jdbcType="INTEGER" property="phonenum" />
+    <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
     <result column="uid" jdbcType="BIGINT" property="uid" />
   </resultMap>
   <resultMap id="BaseResultMapWithUser" type="love.xihongshi.bean.Merchant">
@@ -18,7 +18,7 @@
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="principalname" jdbcType="VARCHAR" property="principalname" />
     <result column="idcard" jdbcType="VARCHAR" property="idcard" />
-    <result column="phonenum" jdbcType="INTEGER" property="phonenum" />
+    <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
     <result column="uid" jdbcType="BIGINT" property="uid" />
     <association property="user"
                   javaType="love.xihongshi.bean.User">

@@ -187,6 +187,17 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByUidWithBLOBsWithUser"
+          parameterType="java.lang.Long" resultMap="ResultMapWithBLOBsWithUser">
+    select
+    <include refid="Base_Column_List_User" />
+    ,
+    <include refid="Blob_Column_List" />
+    from demand d left join user u on d.uid=u.uid
+    <where>
+      d.uid = #{uid}
+    </where>
+  </select>
   <select id="selectByPrimaryKeyWithUser" parameterType="java.lang.Long"
           resultMap="ResultMapWithBLOBsWithUser">
     select
@@ -196,7 +207,6 @@
     from demand d left join user u on d.uid=u.uid
     where did = #{did,jdbcType=BIGINT}
   </select>
-
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from demand

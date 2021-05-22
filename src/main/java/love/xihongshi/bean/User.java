@@ -19,7 +19,7 @@ public class User {
 
     private String avatarUrl;
 
-    private int gender;
+    private Integer gender;
 
     private String province;
 

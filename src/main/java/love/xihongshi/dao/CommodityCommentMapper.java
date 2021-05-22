@@ -3,8 +3,9 @@ package love.xihongshi.dao;
 import java.util.List;
 import love.xihongshi.bean.CommodityComment;
 import love.xihongshi.bean.CommodityCommentExample;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
+@Mapper
 public interface CommodityCommentMapper {
     long countByExample(CommodityCommentExample example);
 

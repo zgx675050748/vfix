@@ -50,4 +50,12 @@ public class DemandService {
 
         return demandMapper.selectByExampleWithUser(demandExample);
     }
+
+    public List<Demand> getDemandByUid(Long uid) {
+        return demandMapper.selectByUidWithBLOBsWithUser(uid);
+    }
+
+    public void updateDemandByDid(Demand demand) {
+        demandMapper.updateByPrimaryKeySelective(demand);
+    }
 }

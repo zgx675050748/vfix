@@ -51,11 +51,18 @@ public class CommodityService {
         return commodityMapper.selectByPrimaryKey(cid);
     }
 
-    public void updateCommodityByCid(Commodity commodity) {
-        commodityMapper.updateByPrimaryKeySelective(commodity);
+    public int updateCommodityByCid(Commodity commodity) {
+        return commodityMapper.updateByPrimaryKeySelective(commodity);
     }
 
     public void addCommodity(Commodity commodity) {
         commodityMapper.insertSelective(commodity);
+    }
+
+    public List<Commodity> getCommodityByCid(Long cid) {
+        CommodityExample commodityExample = new CommodityExample();
+        CommodityExample.Criteria criteria = commodityExample.createCriteria();
+        criteria.andCidEqualTo(cid);
+        return commodityMapper.selectByExample(commodityExample);
     }
 }

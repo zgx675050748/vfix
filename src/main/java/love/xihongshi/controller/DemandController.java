@@ -1,8 +1,10 @@
 package love.xihongshi.controller;
 
 import love.xihongshi.bean.Demand;
+import love.xihongshi.bean.DemandOrderForm;
 import love.xihongshi.bean.Msg;
 import love.xihongshi.bean.User;
+import love.xihongshi.service.DemandOrderFormService;
 import love.xihongshi.service.DemandService;
 import love.xihongshi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,18 @@ public class DemandController {
     private DemandService demandService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private DemandOrderFormService demandOrderFormService;
+
+    @RequestMapping("/underDemand")
+    @ResponseBody
+    public Msg underDemand(Demand demand){
+        demandService.updateDemandByDid(demand);
+        DemandOrderForm demandOrderForm = new DemandOrderForm();
+        demandOrderForm.setStatus("0");
+        demandOrderFormService.updateDemandOrderFormByDid(demand.getDid(),demandOrderForm);
+        return Msg.success();
+    }
 
     @RequestMapping("/searchDemand")
     @ResponseBody
@@ -38,6 +52,13 @@ public class DemandController {
     public Msg getDemandFullByDid(Long did){
         Demand demand = demandService.getDemandByDid(did);
         return Msg.success().add("demand",demand);
+    }
+
+    @RequestMapping("/demandFullbyUid")
+    @ResponseBody
+    public Msg getDemandFullbyUid(Long uid){
+        List<Demand> demandList = demandService.getDemandByUid(uid);
+        return Msg.success().add("demands",demandList);
     }
 
     @RequestMapping("/addDemand")

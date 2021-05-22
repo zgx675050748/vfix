@@ -28,4 +28,8 @@ public class DemandOrderForm {
     private String l2;
 
     private String l3;
+
+    private Worker worker;
+
+    private Demand demand;
 }

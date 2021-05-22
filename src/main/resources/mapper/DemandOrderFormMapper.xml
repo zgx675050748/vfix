@@ -7,9 +7,34 @@
     <result column="wid" jdbcType="BIGINT" property="wid" />
     <result column="releaseDate" jdbcType="TIMESTAMP" property="releasedate" />
     <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="l1" jdbcType="VARCHAR" property="l1" />
-    <result column="l2" jdbcType="VARCHAR" property="l2" />
-    <result column="l3" jdbcType="VARCHAR" property="l3" />
+  </resultMap>
+  <resultMap id="BaseResultMapWithDemandAndWorker"
+             type="love.xihongshi.bean.DemandOrderForm">
+    <id column="ofid" jdbcType="BIGINT" property="ofid" />
+    <result column="did" jdbcType="BIGINT" property="did" />
+    <result column="wid" jdbcType="BIGINT" property="wid" />
+    <result column="dofreleaseDate" jdbcType="TIMESTAMP"
+            property="releasedate" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <association property="demand" javaType="love.xihongshi.bean.Demand">
+      <result column="dreleasedate" jdbcType="TIMESTAMP"
+              property="releasedate" />
+      <result column="enddate" jdbcType="TIMESTAMP" property="enddate" />
+      <result column="dstatus" jdbcType="VARCHAR" property="dstatus" />
+      <result column="uid" jdbcType="BIGINT" property="uid" />
+      <result column="dphonenum" jdbcType="VARCHAR" property="phonenum" />
+      <result column="shortcut" jdbcType="VARCHAR" property="shortcut"/>
+      <result column="daddress" jdbcType="VARCHAR" property="address"/>
+      <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+    </association>
+    <association property="worker"
+                 javaType="love.xihongshi.bean.Worker">
+      <result column="skill" jdbcType="VARCHAR" property="skill" />
+      <result column="wname" jdbcType="VARCHAR" property="wname" />
+      <result column="wphonenum" jdbcType="VARCHAR" property="phonenum" />
+      <result column="uid" jdbcType="BIGINT" property="uid" />
+      <result column="waddress" jdbcType="VARCHAR" property="address" />
+    </association>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,7 +95,13 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ofid, did, wid, releaseDate, status, l1, l2, l3
+    ofid, did, wid, releaseDate, status
+  </sql>
+  <sql id="Base_Column_List_Demand_Worker">
+    dof.ofid, dof.did, dof.wid, dof.releaseDate dofreleaseDate, dof.status,
+    d.releasedate dreleaseDate,
+    d.enddate, d.dstatus, d.uid, d.phonenum dphonenum, d.shortcut, d.address daddress,
+    d.content, w.skill, w.wname, w.phonenum wphonenum, w.uid, w.address waddress
   </sql>
   <select id="selectByExample" parameterType="love.xihongshi.bean.DemandOrderFormExample" resultMap="BaseResultMap">
     select
@@ -92,6 +123,86 @@
     from demandOrderForm
     where ofid = #{ofid,jdbcType=BIGINT}
   </select>
+
+<!--  多表查询-->
+  <select id="selectByExampleWithDemandAndWorker"
+          parameterType="love.xihongshi.bean.DemandOrderFormExample" resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List_Demand_Worker" />
+    from demandOrderForm dof join demand d on dof.did=d.did join worker w on
+    dof.wid=w.wid
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKeyWithDemandAndWorker" parameterType="java.lang.Long" resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    <include refid="Base_Column_List_Demand_Worker" />
+    from demandOrderForm dof join demand d on dof.did=d.did join worker w on
+    dof.wid=w.wid
+    where ofid = #{ofid,jdbcType=BIGINT}
+  </select>
+  <select id="selectByDidWithWorkerMin" parameterType="java.lang.Long"
+          resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    w.skill
+    from demandOrderForm dof left join worker
+    w on
+    dof.wid=w.wid
+    <where>
+      dof.did = #{did}
+    </where>
+  </select>
+  <select id="selectByDidWithWorker" parameterType="java.lang.Long"
+          resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    dof.releaseDate dofreleaseDate, w.skill, w.wname, w.phonenum wphonenum, w.address
+    waddress
+    from demandOrderForm dof left join worker
+    w on
+    dof.wid=w.wid
+    <where>
+      dof.did = #{did}
+    </where>
+  </select>
+  <select id="selectByWidWithDemandMin" parameterType="java.lang.Long"
+          resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    d.releasedate dreleasedate, d.enddate, d.dstatus, d.did,
+    d.shortcut
+    from demandOrderForm dof left join demand
+    d on
+    dof.did=d.did
+    <where>
+      dof.wid = #{wid}
+    </where>
+  </select>
+  <select id="selectByDidWithDemandAndWorker" parameterType="java.lang.Long"
+          resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    <include refid="Base_Column_List_Demand_Worker" />
+    from demandOrderForm dof left join demand d on dof.did=d.did left join worker
+    w on
+    dof.wid=w.wid
+    <where>
+      dof.did = #{did}
+    </where>
+  </select>
+  <select id="selectByWidWithDemandAndWorker" parameterType="java.lang.Long"
+          resultMap="BaseResultMapWithDemandAndWorker">
+    select
+    <include refid="Base_Column_List_Demand_Worker" />
+    from demandOrderForm dof join demand d on dof.did=d.did join worker w on
+    dof.wid=w.wid
+    where dof.wid = #{wid,jdbcType=BIGINT}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from demandOrderForm
     where ofid = #{ofid,jdbcType=BIGINT}

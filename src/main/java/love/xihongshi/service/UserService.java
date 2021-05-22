@@ -26,6 +26,8 @@ public class UserService {
 
     public void login(User user) {
         user.setUserFlag(1);
+        user.setWorkerFlag(0);
+        user.setMerchantFlag(0);
         userMapper.insertSelective(user);
     }
 

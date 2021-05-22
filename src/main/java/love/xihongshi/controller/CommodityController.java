@@ -44,7 +44,6 @@ public class CommodityController {
     @RequestMapping("/changeCommodityByCid")
     @ResponseBody
     public Msg changeCommodityByCid(Commodity commodity){
-        System.out.println(commodity);
         commodityService.updateCommodityByCid(commodity);
         return Msg.success();
     }
@@ -54,6 +53,13 @@ public class CommodityController {
     public Msg getCommodityByCidWithFull(Long cid){
         Commodity commodity = commodityService.getCommodityByCidWithFull(cid);
         return Msg.success().add("commodity",commodity);
+    }
+
+    @RequestMapping("/commodityByCid")
+    @ResponseBody
+    public Msg getCommodityByCid(Long cid){
+        List<Commodity> commodityList = commodityService.getCommodityByCid(cid);
+        return Msg.success().add("commodity",commodityList.get(0));
     }
 
     @RequestMapping("/searchCommodity")

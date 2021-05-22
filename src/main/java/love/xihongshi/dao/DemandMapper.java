@@ -27,6 +27,8 @@ public interface DemandMapper {
 
     List<Demand> selectByExampleWithUser(DemandExample example);
 
+    List<Demand> selectByUidWithBLOBsWithUser(Long uid);
+
     Demand selectByPrimaryKeyWithUser(Long did);
 
     int updateByExampleSelective(@Param("record") Demand record, @Param("example") DemandExample example);
