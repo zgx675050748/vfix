@@ -11,25 +11,27 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class DemandOrderForm {
+public class CommodityOrderForm {
     private Long ofid;
 
-    private Long did;
+    private Long cid;
 
-    private Long wid;
+    private Long uid;
+
+    private String address;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date releasedate;
 
-    private String status;
+    private Integer count;
+
+    private Double money;
+
+    private String phonenum;
 
     private String comment;
 
-    private String l2;
+    private Commodity commodity;
 
-    private String l3;
-
-    private Worker worker;
-
-    private Demand demand;
+    private User user;
 }

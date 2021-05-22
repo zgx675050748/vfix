@@ -1,6 +1,7 @@
 package love.xihongshi.service;
 
 import love.xihongshi.bean.Commodity;
+import love.xihongshi.bean.CommodityOrderForm;
 import love.xihongshi.bean.Merchant;
 import love.xihongshi.bean.MerchantExample;
 import love.xihongshi.dao.CommodityMapper;

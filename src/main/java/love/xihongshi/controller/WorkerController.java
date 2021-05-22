@@ -28,7 +28,15 @@ public class WorkerController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("editWorker")
+
+    @RequestMapping("/workerByWid")
+    @ResponseBody
+    public Msg getWorkerByWid(Long wid){
+        Worker worker = workerService.getWorkerByWid(wid);
+        return Msg.success().add("worker",worker);
+    }
+
+    @RequestMapping("/editWorker")
     @ResponseBody
     public Msg updateWorker(Worker worker){
         workerService.updateWorker(worker);

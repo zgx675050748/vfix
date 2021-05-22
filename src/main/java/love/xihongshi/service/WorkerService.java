@@ -51,4 +51,8 @@ public class WorkerService {
     public void updateWorker(Worker worker) {
         workerMapper.updateByPrimaryKeySelective(worker);
     }
+
+    public Worker getWorkerByWid(Long wid) {
+        return workerMapper.selectByPrimaryKey(wid);
+    }
 }
