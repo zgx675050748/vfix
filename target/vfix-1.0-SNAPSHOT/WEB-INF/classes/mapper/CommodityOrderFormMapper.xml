@@ -218,7 +218,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="love.xihongshi.bean.CommodityOrderForm">
-    insert into commodityOrderForm (ofid, cid, uid, 
+    insert into commodityOrderForm (ofid, cid, uid,
       address, releaseDate, count, 
       money, phoneNum, comment)
     values (#{ofid,jdbcType=BIGINT}, #{cid,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, 

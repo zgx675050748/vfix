@@ -269,7 +269,7 @@
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="l1 != null">
+      <if test="comment != null">
         #{comment,jdbcType=VARCHAR},
       </if>
       <if test="l2 != null">
@@ -365,7 +365,7 @@
       wid = #{wid,jdbcType=BIGINT},
       releaseDate = #{releasedate,jdbcType=TIMESTAMP},
       status = #{status,jdbcType=VARCHAR},
-        comment = #{l1,jdbcType=VARCHAR},
+        comment = #{comment,jdbcType=VARCHAR},
       l2 = #{l2,jdbcType=VARCHAR},
       l3 = #{l3,jdbcType=VARCHAR}
     where ofid = #{ofid,jdbcType=BIGINT}

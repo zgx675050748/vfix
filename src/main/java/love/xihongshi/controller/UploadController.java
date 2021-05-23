@@ -47,10 +47,8 @@ public class UploadController {
         //完成文件上传
         img.transferTo(new File(path,filename));
 
-        System.out.println("http://localhost:8080/images/"+filename);
-
         return Msg.success().add("resPath",
-                "http://localhost:8080/images/"+filename);
+                "https://www.xihongshi.love/images/"+filename);
     }
 
 }
