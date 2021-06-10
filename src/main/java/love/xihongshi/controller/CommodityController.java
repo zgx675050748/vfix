@@ -1,13 +1,12 @@
 package love.xihongshi.controller;
 
-import com.fasterxml.jackson.databind.node.LongNode;
 import love.xihongshi.bean.Commodity;
 import love.xihongshi.bean.Merchant;
 import love.xihongshi.bean.Msg;
-import love.xihongshi.bean.User;
 import love.xihongshi.service.CommodityService;
 import love.xihongshi.service.MerchantService;
-import love.xihongshi.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +23,7 @@ import java.util.List;
  */
 @Controller
 public class CommodityController {
+
     @Autowired
     private CommodityService commodityService;
 
@@ -65,6 +65,7 @@ public class CommodityController {
     @RequestMapping("/searchCommodity")
     @ResponseBody
     public Msg searchCommodity(String key){
+        System.out.println(key);
         List<Commodity> commodityList = commodityService.searchCommodity(key);
         return Msg.success().add("commodity",commodityList);
     }

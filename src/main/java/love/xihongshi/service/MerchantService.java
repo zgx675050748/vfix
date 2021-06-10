@@ -39,4 +39,8 @@ public class MerchantService {
         criteria.andUidEqualTo(uid);
         return merchantMapper.selectByExample(merchantExample);
     }
+
+    public Merchant getMerchantByMid(Long mid) {
+        return merchantMapper.selectByPrimaryKey(mid);
+    }
 }

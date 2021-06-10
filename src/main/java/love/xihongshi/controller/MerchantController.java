@@ -26,6 +26,13 @@ public class MerchantController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/merchantByMid")
+    @ResponseBody
+    public Msg getMerchantByMid(Long mid){
+        Merchant merchant = merchantService.getMerchantByMid(mid);
+        return Msg.success().add("merchant",merchant);
+    }
+
     @RequestMapping("/addMerchant")
     @ResponseBody
     public Msg addMerchant(Merchant merchant,String wid){

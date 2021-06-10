@@ -49,4 +49,17 @@ public class CommodityOrderFormService {
     public List<CommodityOrderForm> getCommentAndUserByCid(Long cid) {
         return commodityOrderFormMapper.selectByCidWithCommentAndUser(cid);
     }
+
+    public Long getCountByUidAndCid(Long uid, Long cid) {
+        CommodityOrderFormExample commodityOrderFormExample =
+                new CommodityOrderFormExample();
+        CommodityOrderFormExample.Criteria criteria = commodityOrderFormExample.createCriteria();
+        criteria.andUidEqualTo(uid);
+        criteria.andCidEqualTo(cid);
+        return  commodityOrderFormMapper.countByExample(commodityOrderFormExample);
+    }
+
+    public void delCommodityOFByOfid(Long ofid) {
+        commodityOrderFormMapper.deleteByPrimaryKey(ofid);
+    }
 }

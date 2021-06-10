@@ -31,6 +31,20 @@ public class CommodityOrderFormController {
     @Autowired
     MerchantService merchantService;
 
+    @RequestMapping("/delCommodityOFByOfid")
+    @ResponseBody
+    public Msg delCommodityOFByUidAndCid(Long ofid){
+        commodityOrderFormService.delCommodityOFByOfid(ofid);
+        return Msg.success();
+    }
+
+    @RequestMapping("/countByUidAndCid")
+    @ResponseBody
+    public Msg getCountByUidAndCid(Long uid,Long cid){
+        Long count = commodityOrderFormService.getCountByUidAndCid(uid,cid);
+        return Msg.success().add("count",count);
+    }
+
     @RequestMapping("/commentAndUserByCid")
     @ResponseBody
     public Msg getCommentAndUserByCid(Long cid){
@@ -59,22 +73,10 @@ public class CommodityOrderFormController {
     @RequestMapping("/addCommodityOF")
     @ResponseBody
     public Msg addCommodityOF(CommodityOrderForm commodityOrderForm){
-        List<Commodity> commodityList =
-                commodityService.getCommodityByCid(commodityOrderForm.getCid());
-        Long amount = commodityList.get(0).getAmount();
-        Long salesamount = commodityList.get(0).getSalesamount();
-        if (amount < commodityOrderForm.getCount()){
-            return Msg.fail().add("msg","库存不足");
-        }
-        else {
-            Commodity commodity = commodityList.get(0);
-            commodity.setSalesamount(salesamount + commodityOrderForm.getCount());
-            commodity.setAmount(amount - commodityOrderForm.getCount());
-            commodityService.updateCommodityByCid(commodity);
-            commodityOrderForm.setReleasedate(new Date());
-            commodityOrderFormService.addCommodityOF(commodityOrderForm);
-            return Msg.success();
-        }
+        commodityOrderForm.setReleasedate(new Date());
+        commodityOrderFormService.addCommodityOF(commodityOrderForm);
+        return Msg.success();
+
     }
 
     @RequestMapping("/getCommodityOFByUid")
